@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD USUARIOS</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Panel de administración de usuarios</h1>
+        <form id="user-form">
+            <input type="hidden" id="user-id">
+            <div><label>Nombre: <input type="text" id="nombre" required></label></div>
+            <div><label>Apellido: <input type="text" id="apellido" required></label></div>
+            <div><label>Email: <input type="email" id="email" required></label></div>
+            <div><label>Password: <input type="password" id="password" required></label></div>
+            <div><label>Rol: <select id="rol">
+                <option value="usuario">Usuario</option>
+                <option value="admin">Admin</option>
+            </select></label></div>
+            <div>
+                <button type="submit" id="submit-button">Crear Usuario</button>
+                <button type="button" id="cancel-button" style="display:none;">Cancelar</button>
+            </div>
+        </form>
+        <button id="show-deleted-button">Ver Eliminados(LOGICAMENTE)</button>
+        <table>
+            <thead>
+                <tr><th>ID</th><th>Nombre</th><th>Apellido</th><th>Email</th><th>Rol</th><th>Acciones</th></tr>
+            </thead>
+            <tbody id="users-table"></tbody>
+        </table>
+    </div>
+</body>
+</html>
